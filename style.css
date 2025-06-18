@@ -1,12 +1,49 @@
 /* Загальні налаштування */
 body {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    background-size: 600% 600%;
-    animation: neonGradient 20s ease infinite;
+    background-color: #121212; /* Темно-сірий фон */
     color: #f0f0f0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Неонова рамка по краях */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow:
+        0 0 20px 5px #00ffff inset,   /* верхній */
+        0 0 20px 5px #ff00ff inset,   /* нижній */
+        0 0 30px 5px #00ffff,         /* зовнішній блік */
+        0 0 40px 10px #ff00ff;        /* ще один блік */
+    animation: neon-pulse 4s infinite alternate;
+    border-radius: 5px;
+}
+
+/* Анімація неону */
+@keyframes neon-pulse {
+    0% {
+        box-shadow:
+            0 0 10px 2px #00ffff inset,
+            0 0 10px 2px #ff00ff inset,
+            0 0 20px 2px #00ffff,
+            0 0 25px 5px #ff00ff;
+    }
+    100% {
+        box-shadow:
+            0 0 25px 6px #00ffff inset,
+            0 0 25px 6px #ff00ff inset,
+            0 0 35px 10px #00ffff,
+            0 0 50px 15px #ff00ff;
+    }
 }
 
 @keyframes neonGradient {
