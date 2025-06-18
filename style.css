@@ -1,10 +1,18 @@
 /* Загальні налаштування */
 body {
-    background-color: #111;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: 600% 600%;
+    animation: neonGradient 20s ease infinite;
     color: #f0f0f0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+@keyframes neonGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Шапка */
